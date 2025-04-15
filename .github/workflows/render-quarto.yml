@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '0 * * * *'  # every hour at :00
   workflow_dispatch:
+  
+permissions:
+  contents: write
 
 jobs:
   build-deploy:
