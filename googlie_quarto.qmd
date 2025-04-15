@@ -21,3 +21,8 @@ df <- read_sheet(
 df |> 
   head(10)
 ```
+
+```{r}
+cat("Rendered at:", format(Sys.time(), "%Y-%m-%d %H:%M:%S %Z"))
+
+```

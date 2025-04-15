@@ -2,7 +2,7 @@ name: Publish Quarto Site
 
 on:
   schedule:
-    - cron: '20 * * * *'  # every hour at :06
+    - cron: '0 * * * *'  # every hour at :00
   workflow_dispatch:
 
 jobs:
@@ -34,6 +34,12 @@ jobs:
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Configure Git identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Publish site to gh-pages
         run: |
           quarto publish gh-pages --no-browser --token ${{ secrets.GITHUB_TOKEN }}
+
