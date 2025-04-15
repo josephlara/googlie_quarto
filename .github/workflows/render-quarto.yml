@@ -2,7 +2,7 @@ name: Test Quarto Report
 
 on:
   schedule:
-    - cron: '0 * * * *'  # every hour on the hour
+    - cron: '8 * * * *'  # every hour on the hourqua
   workflow_dispatch:
 
 jobs:
