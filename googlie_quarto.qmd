@@ -18,5 +18,6 @@ df <- read_sheet(
   ss = "https://docs.google.com/spreadsheets/d/1lIdlDMY30meMscm1Nn6uk9lzAYlPeI5AkqEnqzI7odk",
   sheet = "Sheet39")
 
-df
+df |> 
+  head(10)
 ```
