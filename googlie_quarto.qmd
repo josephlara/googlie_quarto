@@ -10,9 +10,13 @@ Quarto enables you to weave together content and executable code into a finished
 library(googlesheets4)
 
 # Authenticate from service account (in GitHub Action it will be loaded from secret)
-gs4_auth(path = ".github/spry-ivy-456913-t0-bab371265d6c.json")
+auth_path <- Sys.getenv("GSHEET_AUTH_JSON", unset = ".github/gsheet.json")
+gs4_auth(path = auth_path)
+
 
 df <- read_sheet(
   ss = "https://docs.google.com/spreadsheets/d/1lIdlDMY30meMscm1Nn6uk9lzAYlPeI5AkqEnqzI7odk",
   sheet = "Sheet39")
+
+df
 ```

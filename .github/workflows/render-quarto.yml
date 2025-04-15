@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      GKEY_JSON: ${{ secrets.GSHEET_JSON }}
+      GSHEET_AUTH_JSON: .github/gsheet.json
+      GSHEET_JSON: ${{ secrets.GSHEET_JSON }}
 
     steps:
       - uses: actions/checkout@v3
@@ -25,9 +26,7 @@ jobs:
 
       - name: Decode and save Google service account key
         run: |
-          echo "$GKEY_JSON" | base64 --decode > gsheet.json
+          echo "$GSHEET_JSON" | base64 --decode > .github/gsheet.json
 
       - name: Render Quarto
-        run: |
-          Rscript -e 'googlesheets4::gs4_auth(path = "gsheet.json")'
-          quarto render
+        run: quarto render
