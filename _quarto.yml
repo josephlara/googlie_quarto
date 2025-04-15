@@ -1,5 +1,13 @@
 project:
   title: "googlie_quarto"
+  type: website
 
-editor: visual
+website:
+  title: "Googlie Quarto"
+  site-url: https://josephlara.github.io/googlie_quarto/
+  navbar: false
 
+format:
+  html:
+    toc: true
+    theme: default
