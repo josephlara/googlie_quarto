@@ -28,7 +28,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("googlesheets4", "dplyr", "readr", "tidyverse"))'
+          Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages(c("dplyr", "readr", "ggplo2", "googlesheets4", "gt"))'
 
       - name: Decode and save Google service account key
         run: |
