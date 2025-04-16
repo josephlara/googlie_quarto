@@ -1,28 +1,68 @@
 ---
-title: "googlie_quarto"
+title: "Quarto and Github Actions"
+format: 
+  dashboard:
+    orientation: columns  
+    nav-buttons: [github]
+    github: https://github.com/josephlara/googlie_quarto
+
+  
 ---
 
-## Quarto
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+library(tidyverse)
+library(gt)
+library(googlesheets4)
+```
+
+## Column Left
+### Row 1: Introduction {height="30%"}
+
+This Quarto document is really just an experimentation and learning project of mine.  I'm first going to do some setup procedures to set my Google credentials which will allow me to fetch content from a GoogleSheet.  The credentials are functional both when used on my local machine or as part of a 'Github Action'.
 
 ```{r}
-library(googlesheets4)
+#| warning: false
+#| title: GoogleSheet Data Head
 
-# Authenticate from service account (in GitHub Action it will be loaded from secret)
-auth_path <- Sys.getenv("GSHEET_AUTH_JSON", unset = ".github/gsheet.json")
+# set service account (loaded as secret from Github)
+auth_path <- Sys.getenv("GSHEET_AUTH_JSON", 
+                        unset = ".github/gsheet.json")
+# authenticate
 gs4_auth(path = auth_path)
 
-
+# fetch GoogleSheet data
 df <- read_sheet(
   ss = "https://docs.google.com/spreadsheets/d/1lIdlDMY30meMscm1Nn6uk9lzAYlPeI5AkqEnqzI7odk",
   sheet = "Sheet39")
 
-df |> 
-  head(10)
 ```
+
+### Row 2: Bargraph {height="70%"}
+```{r}
+#| echo: false
+#| title: Graph of Fruits Sold
+
+df |> 
+  ggplot(aes(type, value, fill = type)) +
+  geom_col() +
+  coord_flip()
+
+```
+
+## Column Right
 
 ```{r}
-cat("Rendered at:", format(Sys.time(), "%Y-%m-%d %H:%M:%S %Z"))
+#| echo: false
+#| title: Number of Fruits Sold
+# print data head
+df |> 
+  gt()
 
+cat("Rendered at:", format(Sys.time(), "%Y-%m-%d %H:%M:%S %Z"))
 ```
+
+
