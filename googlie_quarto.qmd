@@ -14,7 +14,9 @@ format:
 #| warning: false
 #| message: false
 
-library(tidyverse)
+library(readr)
+library(dplyr)
+library(ggplot2)
 library(gt)
 library(googlesheets4)
 ```
