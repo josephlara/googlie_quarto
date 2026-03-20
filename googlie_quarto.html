@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Quarto and Github Actions – Googlie Quarto</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -31,19 +34,18 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9195fa1a9c736cb8c2994c5df3058328.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9195fa1a9c736cb8c2994c5df3058328.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-9195fa1a9c736cb8c2994c5df3058328.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cc75b09f5250c27d17e89c6d0d56fedc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-cc75b09f5250c27d17e89c6d0d56fedc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cc75b09f5250c27d17e89c6d0d56fedc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-dashboard/quarto-dashboard.js"></script>
 <script src="site_libs/quarto-dashboard/stickythead.js"></script>
 
@@ -153,23 +155,23 @@ Number of Fruits Sold
 </span></div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="xmtxxyeynj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
-<style>#xmtxxyeynj table {
+<div id="ijbfwaetyj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
+<style>#ijbfwaetyj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xmtxxyeynj thead, #xmtxxyeynj tbody, #xmtxxyeynj tfoot, #xmtxxyeynj tr, #xmtxxyeynj td, #xmtxxyeynj th {
+#ijbfwaetyj thead, #ijbfwaetyj tbody, #ijbfwaetyj tfoot, #ijbfwaetyj tr, #ijbfwaetyj td, #ijbfwaetyj th {
   border-style: none;
 }
 
-#xmtxxyeynj p {
+#ijbfwaetyj p {
   margin: 0;
   padding: 0;
 }
 
-#xmtxxyeynj .gt_table {
+#ijbfwaetyj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -195,12 +197,12 @@ Number of Fruits Sold
   border-left-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_caption {
+#ijbfwaetyj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xmtxxyeynj .gt_title {
+#ijbfwaetyj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -212,7 +214,7 @@ Number of Fruits Sold
   border-bottom-width: 0;
 }
 
-#xmtxxyeynj .gt_subtitle {
+#ijbfwaetyj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -224,7 +226,7 @@ Number of Fruits Sold
   border-top-width: 0;
 }
 
-#xmtxxyeynj .gt_heading {
+#ijbfwaetyj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -236,13 +238,13 @@ Number of Fruits Sold
   border-right-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_bottom_border {
+#ijbfwaetyj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_col_headings {
+#ijbfwaetyj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -257,7 +259,7 @@ Number of Fruits Sold
   border-right-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_col_heading {
+#ijbfwaetyj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -277,7 +279,7 @@ Number of Fruits Sold
   overflow-x: hidden;
 }
 
-#xmtxxyeynj .gt_column_spanner_outer {
+#ijbfwaetyj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -289,15 +291,15 @@ Number of Fruits Sold
   padding-right: 4px;
 }
 
-#xmtxxyeynj .gt_column_spanner_outer:first-child {
+#ijbfwaetyj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xmtxxyeynj .gt_column_spanner_outer:last-child {
+#ijbfwaetyj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xmtxxyeynj .gt_column_spanner {
+#ijbfwaetyj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -309,11 +311,11 @@ Number of Fruits Sold
   width: 100%;
 }
 
-#xmtxxyeynj .gt_spanner_row {
+#ijbfwaetyj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xmtxxyeynj .gt_group_heading {
+#ijbfwaetyj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -339,7 +341,7 @@ Number of Fruits Sold
   text-align: left;
 }
 
-#xmtxxyeynj .gt_empty_group_heading {
+#ijbfwaetyj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -354,15 +356,15 @@ Number of Fruits Sold
   vertical-align: middle;
 }
 
-#xmtxxyeynj .gt_from_md > :first-child {
+#ijbfwaetyj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xmtxxyeynj .gt_from_md > :last-child {
+#ijbfwaetyj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xmtxxyeynj .gt_row {
+#ijbfwaetyj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -381,7 +383,7 @@ Number of Fruits Sold
   overflow-x: hidden;
 }
 
-#xmtxxyeynj .gt_stub {
+#ijbfwaetyj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -394,7 +396,7 @@ Number of Fruits Sold
   padding-right: 5px;
 }
 
-#xmtxxyeynj .gt_stub_row_group {
+#ijbfwaetyj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -408,15 +410,15 @@ Number of Fruits Sold
   vertical-align: top;
 }
 
-#xmtxxyeynj .gt_row_group_first td {
+#ijbfwaetyj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xmtxxyeynj .gt_row_group_first th {
+#ijbfwaetyj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xmtxxyeynj .gt_summary_row {
+#ijbfwaetyj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -426,16 +428,16 @@ Number of Fruits Sold
   padding-right: 5px;
 }
 
-#xmtxxyeynj .gt_first_summary_row {
+#ijbfwaetyj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_first_summary_row.thick {
+#ijbfwaetyj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xmtxxyeynj .gt_last_summary_row {
+#ijbfwaetyj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -445,7 +447,7 @@ Number of Fruits Sold
   border-bottom-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_grand_summary_row {
+#ijbfwaetyj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -455,7 +457,7 @@ Number of Fruits Sold
   padding-right: 5px;
 }
 
-#xmtxxyeynj .gt_first_grand_summary_row {
+#ijbfwaetyj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -465,7 +467,7 @@ Number of Fruits Sold
   border-top-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_last_grand_summary_row_top {
+#ijbfwaetyj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -475,11 +477,11 @@ Number of Fruits Sold
   border-bottom-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_striped {
+#ijbfwaetyj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xmtxxyeynj .gt_table_body {
+#ijbfwaetyj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -488,7 +490,7 @@ Number of Fruits Sold
   border-bottom-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_footnotes {
+#ijbfwaetyj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -502,7 +504,7 @@ Number of Fruits Sold
   border-right-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_footnote {
+#ijbfwaetyj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -511,7 +513,7 @@ Number of Fruits Sold
   padding-right: 5px;
 }
 
-#xmtxxyeynj .gt_sourcenotes {
+#ijbfwaetyj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -525,7 +527,7 @@ Number of Fruits Sold
   border-right-color: #D3D3D3;
 }
 
-#xmtxxyeynj .gt_sourcenote {
+#ijbfwaetyj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -533,72 +535,72 @@ Number of Fruits Sold
   padding-right: 5px;
 }
 
-#xmtxxyeynj .gt_left {
+#ijbfwaetyj .gt_left {
   text-align: left;
 }
 
-#xmtxxyeynj .gt_center {
+#ijbfwaetyj .gt_center {
   text-align: center;
 }
 
-#xmtxxyeynj .gt_right {
+#ijbfwaetyj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xmtxxyeynj .gt_font_normal {
+#ijbfwaetyj .gt_font_normal {
   font-weight: normal;
 }
 
-#xmtxxyeynj .gt_font_bold {
+#ijbfwaetyj .gt_font_bold {
   font-weight: bold;
 }
 
-#xmtxxyeynj .gt_font_italic {
+#ijbfwaetyj .gt_font_italic {
   font-style: italic;
 }
 
-#xmtxxyeynj .gt_super {
+#ijbfwaetyj .gt_super {
   font-size: 65%;
 }
 
-#xmtxxyeynj .gt_footnote_marks {
+#ijbfwaetyj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xmtxxyeynj .gt_asterisk {
+#ijbfwaetyj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xmtxxyeynj .gt_indent_1 {
+#ijbfwaetyj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xmtxxyeynj .gt_indent_2 {
+#ijbfwaetyj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xmtxxyeynj .gt_indent_3 {
+#ijbfwaetyj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xmtxxyeynj .gt_indent_4 {
+#ijbfwaetyj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xmtxxyeynj .gt_indent_5 {
+#ijbfwaetyj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xmtxxyeynj .katex-display {
+#ijbfwaetyj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xmtxxyeynj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ijbfwaetyj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -653,7 +655,7 @@ Number of Fruits Sold
 </div>
 </div>
 <div class="cell-output cell-output-stdout html-fill-item html-fill-container">
-<pre><code>Rendered at: 2026-03-20 15:27:25 UTC</code></pre>
+<pre><code>Rendered at: 2026-03-20 16:26:27 UTC</code></pre>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
